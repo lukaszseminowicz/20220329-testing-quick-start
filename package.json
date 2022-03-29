@@ -1,0 +1,33 @@
+{
+  "name": "quick-start-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --transform babel-jest",
+    "test:watch": "npm run test -- --watchAll",
+    "test:verbose": "npm run test:watch -- --verbose",
+    "test:experiments": "npm run test:watch -- src/experiments",
+    "test:warm-up-102": "npm run test:watch -- src/day-1/10-warm-up/102-sample-logic.spec.js",
+    "test:warm-up-103": "npm run test:watch -- src/day-1/10-warm-up/103-understand-assertions.spec.js",
+    "test:task-104": "npm run test:watch -- src/day-1/10-warm-up/104-task-a-warm-up.spec.js",
+    "test:task-113": "npm run test:watch -- src/day-1/11-unit-testing-intro/113-task-write-a-unit-test-of-your-own.spec.js",
+    "test:task-120": "npm run test:watch -- src/day-1/12-use-tests-in-existing-project/120-sample/[your-test-name].js",
+    "test:task-121": "npm run test:watch -- src/day-1/12-use-tests-in-existing-project/121-sample/121-task-game.spec.js",
+    "test:example-210": "npm run test:watch -- src/day-2/21-change-code-to-be-testable/210-stub-module-example/210-stub-whole-module.spec.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@testing-library/dom": "^8.12.0",
+    "@types/jest": "^27.4.1",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
+    "msw": "^0.39.2"
+  },
+  "type": "module"
+}

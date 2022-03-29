@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Monolith APP</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <!--
+        - uruchom monolith.html — swoim ulubionym dev serwerem.
+        - sprawdź jak działa.
+
+        - rozbij na mniejsze części.
+        - napisz testy pod te części.
+    -->
+    <div class="is-flex is-align-items-center" style="height: 100vh" id="app">
+      <div class="container" data-app></div>
+    </div>
+    <script type="module">
+      import axios from 'https://cdn.skypack.dev/axios';
+
+      let counter = 0;
+      const $app = document.querySelector('[data-app]');
+
+      function loadCountries() {
+        return axios
+          .get('https://restcountries.com/v3.1/all')
+          .then(res => res.data);
+      }
+
+      const $h1 = document.createElement('h1');
+      $h1.className = 'title is-2';
+      $h1.textContent = 'See all countries...';
+
+      const $h3 = document.createElement('h1');
+      $h3.className = 'title is-3';
+      $h3.textContent = 'loading...';
+      const $section = document.createElement('section');
+      $section.className = 'is-flex is-justify-content-space-between';
+      const $rightBtn = document.createElement('button');
+      $rightBtn.className = 'button is-link';
+      $rightBtn.textContent = 'Next ▶';
+      const $leftBtn = document.createElement('button');
+      $leftBtn.className = 'button is-warning';
+      $leftBtn.textContent = '◀ Previous';
+      $section.append($leftBtn, $h3, $rightBtn);
+
+      let allCountries = [];
+      loadCountries().then(countries => {
+        allCountries = countries;
+        $h3.textContent = allCountries[counter].name.official;
+        $leftBtn.addEventListener('click', () => {
+          if (counter > 0) {
+            counter--;
+          }
+          $h3.textContent = allCountries[counter].name.official;
+        });
+        $rightBtn.addEventListener('click', () => {
+          if (counter < allCountries.length - 1) {
+            counter++;
+          }
+          $h3.textContent = allCountries[counter].name.official;
+        });
+      });
+
+      $app.append($h1, $section);
+    </script>
+  </body>
+</html>

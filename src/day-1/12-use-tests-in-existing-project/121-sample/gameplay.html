@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RPS game</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <header class="hero is-primary">
+      <div class="hero-body">
+        <h1 class="title">Rock - Paper - Scissors</h1>
+      </div>
+    </header>
+    <main class="container"></main>
+    <script type="module">
+      import RPSGame from './rps-game.component.js';
+      import { possibleChoices, playWithComputer } from './game.js';
+
+      possibleChoices(['rock', 'paper', 'scissors']);
+
+      document.querySelector('main').appendChild(new RPSGame(playWithComputer));
+    </script>
+  </body>
+</html>

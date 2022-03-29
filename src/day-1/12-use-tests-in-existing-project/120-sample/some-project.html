@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Some project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <style>
+      .w-50 {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="container my-6">
+      <article class="message w-50 mx-auto is-info">
+        <div data-msg-header class="message-header"></div>
+        <div data-msg-body class="message-body"></div>
+      </article>
+      <div class="is-flex is-justify-content-space-between w-50 mx-auto">
+        <button data-btn-prev class="button is-warning">◀ Previous</button>
+        <button data-btn-next class="button is-link">Next ▶</button>
+      </div>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

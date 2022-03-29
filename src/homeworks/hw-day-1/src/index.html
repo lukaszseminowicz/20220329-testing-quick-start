@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form validation</title>
+    <link rel="stylesheet" href="../node_modules/bulma/css/bulma.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero is-link">
+      <div class="hero-body">
+        <p class="title">SuperProfessionals.com</p>
+        <p class="subtitle">Sign Up form</p>
+      </div>
+    </header>
+    <main id="app" class="container">
+      <form class="form w-50 my-5 mx-auto" novalidate data-form>
+        <div class="field">
+          <label for="name" class="label">* Name</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Your name"
+              name="name"
+              id="name"
+              data-validate-required
+              data-validate-min-length="3"
+            />
+          </div>
+          <p class="help is-danger"></p>
+        </div>
+        <div class="field">
+          <label for="lastName" class="label">Last name</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Type the last name"
+              name="lastName"
+              id="lastName"
+              data-validate-min-length="3"
+            />
+          </div>
+          <p class="help is-danger"></p>
+        </div>
+        <div class="field">
+          <label for="email" class="label">* E-mail</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Registration e-mail address"
+              name="email"
+              id="email"
+              data-validate-required
+              data-validate-email
+            />
+          </div>
+          <p class="help is-danger"></p>
+        </div>
+        <div class="field">
+          <label for="password" class="label">* Password</label>
+          <div class="control">
+            <input
+              class="input"
+              type="password"
+              name="password"
+              id="password"
+              data-validate-required
+              data-validate-password
+            />
+          </div>
+          <p class="help is-danger"></p>
+        </div>
+        <div class="is-flex is-justify-content-space-between mt-5">
+          <button class="button is-danger" type="reset">✖ Reset</button>
+          <button class="button is-link" type="submit">💥 Sign Up</button>
+        </div>
+      </form>
+    </main>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
