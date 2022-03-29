@@ -6,7 +6,8 @@
   "scripts": {
     "start": "parcel src/index.html --open",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "test:form-validators": "npm run test:watch -- src/validators/form-validators.spec.js"
   },
   "keywords": [],
   "author": "",
