@@ -7,7 +7,7 @@ export function validateRequired(value) {
 
 export function validateMinLength(value, minLength) {
   const numericMinLength = Number(minLength);
-  if (value.length > numericMinLength) {
+  if (value.length < numericMinLength) {
     return { minLength: `Field must have at least ${minLength} chars` };
   }
   return { minLength: '' };
@@ -17,7 +17,7 @@ export function validateEmail(value) {
   if (!value.includes('@')) {
     return { email: `Invalid e-mail address` };
   }
-  return { email: value };
+  return { email: '' };
 }
 
 export function validatePassword(value) {
