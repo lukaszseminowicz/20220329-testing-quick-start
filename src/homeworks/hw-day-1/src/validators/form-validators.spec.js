@@ -4,7 +4,10 @@ describe('form-validators test', () => {
     it('should be required', () => {
         const required = validateRequired('test_field');
         expect(required.required).toBe('');
-
+    });
+    it('should be ...', () => {
+        const validateLength = validateMinLength('Altkom', 6);
+        expect(validateLength.minLength).toBe('');
     });
     it('should be a valid email address', () => {
         const email = validateEmail('test.email@gmail.com');

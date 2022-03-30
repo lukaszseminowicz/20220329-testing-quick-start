@@ -7,7 +7,7 @@ export function validateRequired(value) {
 
 export function validateMinLength(value, minLength) {
   const numericMinLength = Number(minLength);
-  if (value.length < numericMinLength) {
+  if (value.length > numericMinLength) {
     return { minLength: `Field must have at least ${minLength} chars` };
   }
   return { minLength: '' };
