@@ -1,4 +1,3 @@
-import { getDefaultNormalizer } from '@testing-library/dom';
 import { validateRequired, validateMinLength, validateEmail, validatePassword } from './form-validators.js';
 
 describe('form-validators test', () => {
