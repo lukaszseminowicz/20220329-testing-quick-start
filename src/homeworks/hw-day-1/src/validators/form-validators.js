@@ -17,7 +17,7 @@ export function validateEmail(value) {
   if (!value.includes('@')) {
     return { email: `Invalid e-mail address` };
   }
-  return { email: '' };
+  return { email: value };
 }
 
 export function validatePassword(value) {
