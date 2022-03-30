@@ -13,4 +13,8 @@ describe('form-validators test', () => {
         const email = validateEmail('test.email@gmail.com');
         expect(email.email).toBe('test.email@gmail.com');
     });
+    it('should be a valid password', () => {
+        const password = validatePassword('pa$sword1');
+        expect(password.password).toBe('');
+    });
 });
