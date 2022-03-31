@@ -1,5 +1,6 @@
 export class CartService {
   subscribers = [];
+  cartItems = [];
 
   subscribe(callback = () => {}) {
     this.subscribers.push(callback);
@@ -13,21 +14,29 @@ export class CartService {
   }
 
   getAll() {
-    return [];
+    return this.cartItems;
   }
 
   getCount() {
-    return 0;
+    return this.cartItems.length;
   }
 
   getValue() {
-    return 0;
+    let value = 0;
+    for (const item of this.cartItems) {
+      value += item.value;
+    }
+    return value;
   }
 
   addToCart(product) {
     console.log(product);
-    // add some logic here
-
+    this.cartItems.push({
+      id: product.id,
+      product: { name:product.name },
+      amount: 1, // TODO
+      value: product.value
+    });
     // This must be here (after cart state update)
     this.broadcast();
   }
